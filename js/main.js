@@ -41,6 +41,18 @@
         document.body.style.overflow = "";
       });
     });
+
+    window.addEventListener(
+      "resize",
+      function () {
+        if (window.matchMedia("(min-width: 769px)").matches && siteNav.classList.contains("is-open")) {
+          navToggle.setAttribute("aria-expanded", "false");
+          siteNav.classList.remove("is-open");
+          document.body.style.overflow = "";
+        }
+      },
+      { passive: true }
+    );
   }
 
   /* Scroll reveal */
@@ -51,7 +63,7 @@
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           var el = entry.target;
-          var parent = el.closest(".servicos-premium__grid, .galeria-grid, .footer-inner");
+          var parent = el.closest(".servicos-premium__grid, .galeria-grid, .footer-premium");
           var delay = 0;
           if (parent) {
             var siblings = parent.querySelectorAll("[data-reveal]");
@@ -130,8 +142,8 @@
   }
 
   /* App / store links — substitua pelos URLs reais */
-  var APP_URL = "#agendar";
-  var STORE_URL = "#app";
+  var APP_URL = "#app-download";
+  var STORE_URL = "#app-download";
 
   document.querySelectorAll("[data-app-link]").forEach(function (a) {
     if (a.getAttribute("href") === "#") {

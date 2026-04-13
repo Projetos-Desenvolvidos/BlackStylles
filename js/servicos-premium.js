@@ -14,7 +14,6 @@
   var eyebrow = section.querySelector(".section-editorial__eyebrow");
   var lede = section.querySelector(".section-editorial__lede");
   var cards = section.querySelectorAll("[data-servico-card]");
-  var techItems = section.querySelectorAll("[data-servico-tech-item]");
 
   function runIntro() {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
@@ -41,9 +40,6 @@
       typeof window.matchMedia !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
     var cardStagger = narrow ? 0.06 : 0.09;
     var cardDur = narrow ? 0.52 : 0.65;
-    var techStagger = narrow ? 0.04 : 0.06;
-    var techDur = narrow ? 0.42 : 0.5;
-
     if (cards.length) {
       tl.from(
         cards,
@@ -52,13 +48,6 @@
       );
     }
 
-    if (techItems.length) {
-      tl.from(
-        techItems,
-        { autoAlpha: 0, y: narrow ? 16 : 22, duration: techDur, stagger: techStagger, ease: "power2.out" },
-        0.32
-      );
-    }
   }
 
   if (prefersReduced) {

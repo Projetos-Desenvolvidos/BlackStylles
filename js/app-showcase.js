@@ -9,6 +9,13 @@
   var STORE_IOS_URL = "https://apps.apple.com/app/id000000000";
   var STORE_ANDROID_URL = "https://play.google.com/store/apps/details?id=com.example";
 
+  document.querySelectorAll("a[data-app-ios]").forEach(function (a) {
+    a.href = STORE_IOS_URL;
+  });
+  document.querySelectorAll("a[data-app-android]").forEach(function (a) {
+    a.href = STORE_ANDROID_URL;
+  });
+
   var section = document.querySelector(".app-showcase");
   if (!section || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     return;
@@ -21,13 +28,6 @@
   var floatEl = section.querySelector(".app-showcase__phone-float");
   var glow = section.querySelector(".app-showcase__glow");
   var copy = section.querySelector(".app-showcase__copy");
-
-  document.querySelectorAll("a[data-app-ios]").forEach(function (a) {
-    a.href = STORE_IOS_URL;
-  });
-  document.querySelectorAll("a[data-app-android]").forEach(function (a) {
-    a.href = STORE_ANDROID_URL;
-  });
 
   var prefersReduced =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;

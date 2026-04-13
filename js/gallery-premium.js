@@ -178,23 +178,9 @@
 
     updateDots();
 
-    /* Entrada suave da área do carrossel */
+    /* Entrada suave da área do carrossel (cabeçalho animado em text-reveal-global.js) */
     if (!prefersReduced && typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-      var head = document.querySelector(".netflix-gallery__head");
       var shell = document.querySelector(".netflix-gallery__shell");
-      if (head) {
-        gsap.from(head, {
-          opacity: 0,
-          y: 28,
-          duration: 0.85,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".netflix-gallery",
-            start: "top 88%",
-            once: true,
-          },
-        });
-      }
       if (shell) {
         gsap.from(shell, {
           opacity: 0,
