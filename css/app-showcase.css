@@ -58,38 +58,8 @@
   }
 }
 
-.app-showcase__label {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #3d3d3d;
-  margin-bottom: 1rem;
-  padding: 0.4rem 0.75rem;
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 3px;
-}
-
-.app-showcase__title {
-  font-family: var(--font-display, "Archivo Black", sans-serif);
-  font-size: clamp(2.1rem, 4.2vw, 3.35rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: #0a0a0a;
-  margin: 0 0 1.25rem;
-  max-width: 16ch;
-}
-
-.app-showcase__subtitle {
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.55;
-  color: #454545;
-  font-weight: 500;
-  margin: 0 0 1rem;
-  max-width: 38ch;
+.app-showcase__head.section-editorial {
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .app-showcase__extra {
@@ -335,18 +305,12 @@
     text-align: center;
   }
 
-  .app-showcase__label {
+  .app-showcase__copy .section-editorial {
     margin-left: auto;
     margin-right: auto;
+    max-width: 36rem;
   }
 
-  .app-showcase__title {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-  }
-
-  .app-showcase__subtitle,
   .app-showcase__extra {
     margin-left: auto;
     margin-right: auto;

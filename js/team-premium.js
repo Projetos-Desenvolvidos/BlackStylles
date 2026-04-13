@@ -32,7 +32,7 @@
       ease: "power3.out",
       immediateRender: false,
       scrollTrigger: {
-        trigger: section.querySelector(".team-editorial__header") || section,
+        trigger: section.querySelector(".section-editorial") || section,
         start: "top 82%",
         once: true,
       },

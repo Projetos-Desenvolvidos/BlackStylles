@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/section-editorial.css" />
   <link rel="stylesheet" href="css/app-showcase.css" />
   <link rel="stylesheet" href="css/gallery-premium.css" />
   <link rel="stylesheet" href="css/team-premium.css" />
+  <link rel="stylesheet" href="css/brand-story.css" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -84,31 +86,58 @@
       </div>
     </section>
 
-    <section id="sobre" class="section sobre">
-      <div class="section-inner">
-        <div class="section-head reveal" data-reveal>
-          <span class="section-label">01 — Identidade</span>
-          <h2 class="section-title">Mais que corte.<br /><span class="text-gradient">Atitude.</span></h2>
-        </div>
-        <div class="sobre-grid">
-          <div class="sobre-copy reveal" data-reveal>
-            <p>A <strong>Black Stylle Barber</strong> nasceu da rua e do respeito ao jogo: quem entra aqui não quer só um corte — quer presença, alinhamento e identidade.</p>
-            <p>Nosso time domina fade na régua, desenho de barba e aquele acabamento que segura o dia inteiro. Ambiente escuro, som na medida e atendimento direto: sem enrolação, sem genérico.</p>
-            <p>Se você busca barbearia de verdade, com estética urbana e padrão premium, você já sabe onde parar.</p>
+    <section id="sobre" class="brand-story" aria-labelledby="brand-story-heading">
+      <div class="brand-story__noise" aria-hidden="true"></div>
+      <div class="brand-story__inner">
+        <div class="brand-story__rail" aria-hidden="true"></div>
+
+        <header class="section-editorial section-editorial--dark">
+          <span class="section-editorial__index" data-brand-anim aria-hidden="true">01</span>
+          <div class="section-editorial__text">
+            <p class="section-editorial__eyebrow" data-brand-anim>Identidade &amp; história</p>
+            <h2 id="brand-story-heading" class="section-editorial__title">
+              <span data-brand-title-line data-brand-anim>Mais que uma barbearia. Uma </span><em data-brand-title-line data-brand-anim>identidade.</em>
+            </h2>
+            <p class="section-editorial__lede" data-brand-anim>
+              Fundada por Wesley, a barbearia nasceu com um propósito simples: <strong>elevar o padrão</strong>.
+            </p>
           </div>
-          <div class="sobre-stats reveal" data-reveal>
-            <div class="stat">
-              <span class="stat-num" data-count="8">0</span>
-              <span class="stat-label">Anos de ofício</span>
+        </header>
+
+        <div class="brand-story__stage">
+          <div class="brand-story__copy">
+            <div class="brand-story__rule" aria-hidden="true"></div>
+            <div class="brand-story__body">
+              <p data-brand-para data-brand-anim>
+                Cada detalhe foi pensado para ir além do corte: ritmo, acolhimento e precisão em cada passada. Do primeiro contato ao acabamento final, a experiência é desenhada para quem exige presença e consistência.
+              </p>
+              <p data-brand-para data-brand-anim>
+                Wesley traduziu visão em espaço físico — onde tradição de ofício encontra estética contemporânea — e construiu uma marca que comunica postura antes mesmo da primeira palavra.
+              </p>
             </div>
-            <div class="stat">
-              <span class="stat-num" data-count="12000">0</span>
-              <span class="stat-label">Cortes entregues</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-count="5">0</span>
-              <span class="stat-label">Cadeiras ativas</span>
-            </div>
+            <p class="brand-story__pullquote" data-brand-anim>
+              Estilo não é só aparência. <span>É identidade.</span>
+            </p>
+          </div>
+
+          <div class="brand-story__visual">
+            <figure class="brand-story__figure" data-brand-visual>
+              <div class="brand-story__frame" data-brand-frame>
+                <img
+                  src="img/ceo2.png"
+                  alt="Wesley, CEO e fundador da Black Stylle Barber"
+                  width="900"
+                  height="1100"
+                  loading="lazy"
+                  decoding="async"
+                  data-brand-img
+                />
+              </div>
+              <figcaption class="brand-story__caption">
+                <strong>Wesley</strong>
+                <span>CEO · Fundador</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -117,12 +146,12 @@
     <section id="equipe" class="team-editorial" aria-labelledby="team-editorial-heading">
       <div class="team-editorial__bgline" aria-hidden="true"></div>
       <div class="team-editorial__inner">
-        <header class="team-editorial__header">
-          <span class="team-editorial__index" data-team-intro aria-hidden="true">02</span>
-          <div class="team-editorial__header-text">
-            <p class="team-editorial__eyebrow" data-team-intro>Equipe &amp; técnica</p>
-            <h2 id="team-editorial-heading" class="team-editorial__title" data-team-intro>Dois à frente do <em>padrão</em></h2>
-            <p class="team-editorial__lede" data-team-intro>A barbearia é assinatura humana antes de ser tendência.</p>
+        <header class="section-editorial section-editorial--dark">
+          <span class="section-editorial__index" data-team-intro aria-hidden="true">02</span>
+          <div class="section-editorial__text">
+            <p class="section-editorial__eyebrow" data-team-intro>Equipe &amp; técnica</p>
+            <h2 id="team-editorial-heading" class="section-editorial__title" data-team-intro>Dois à frente do <em>padrão</em></h2>
+            <p class="section-editorial__lede" data-team-intro>A barbearia é assinatura humana antes de ser tendência.</p>
           </div>
         </header>
 
@@ -162,10 +191,14 @@
 
     <section id="servicos" class="section servicos">
       <div class="section-inner">
-        <div class="section-head reveal" data-reveal>
-          <span class="section-label">03 — Serviços</span>
-          <h2 class="section-title">O que a gente<br /><span class="text-gradient">entrega</span></h2>
-        </div>
+        <header class="section-editorial section-editorial--light reveal" data-reveal>
+          <span class="section-editorial__index" aria-hidden="true">03</span>
+          <div class="section-editorial__text">
+            <p class="section-editorial__eyebrow">Serviços &amp; técnica</p>
+            <h2 class="section-editorial__title">O que a gente <em>entrega</em></h2>
+            <p class="section-editorial__lede">Corte, barba e combo com tempo respeitado e resultado que segura o dia inteiro.</p>
+          </div>
+        </header>
         <div class="cards-servicos">
           <article class="card-servico reveal" data-reveal>
             <div class="card-servico-img">
@@ -203,9 +236,13 @@
     </section>
 
     <section id="galeria" class="gallery-premium" aria-labelledby="gallery-premium-title">
-      <header class="gallery-premium__intro">
-        <p class="gallery-premium__kicker">04 — Galeria</p>
-        <h2 id="gallery-premium-title" class="gallery-premium__title">Cortes com assinatura premium</h2>
+      <header class="gallery-premium__intro section-editorial section-editorial--dark">
+        <span class="section-editorial__index" aria-hidden="true">04</span>
+        <div class="section-editorial__text">
+          <p class="section-editorial__eyebrow">Galeria &amp; trabalhos</p>
+          <h2 id="gallery-premium-title" class="section-editorial__title">Cortes com assinatura <em>premium</em></h2>
+          <p class="section-editorial__lede">Fade, degradê e acabamento em evidência — referência em cada detalhe.</p>
+        </div>
       </header>
 
       <article class="spotlight" data-spotlight>
@@ -409,11 +446,16 @@
             </div>
           </div>
           <div class="app-showcase__copy">
-            <span class="app-showcase__label">App exclusivo</span>
-            <h2 class="app-showcase__title" id="app-showcase-title">Agende seu horário em segundos.</h2>
-            <p class="app-showcase__subtitle">
-              Sem espera, sem ligação, sem complicação. Escolha seu barbeiro, horário e serviço direto pelo app.
-            </p>
+            <header class="section-editorial section-editorial--light app-showcase__head">
+              <span class="section-editorial__index" aria-hidden="true">05</span>
+              <div class="section-editorial__text">
+                <p class="section-editorial__eyebrow">App &amp; agenda</p>
+                <h2 id="app-showcase-title" class="section-editorial__title">Agende seu horário em <em>segundos.</em></h2>
+                <p class="section-editorial__lede">
+                  Sem espera, sem ligação, sem complicação. Escolha seu barbeiro, horário e serviço direto pelo app.
+                </p>
+              </div>
+            </header>
             <p class="app-showcase__extra">
               Tenha prioridade no atendimento, receba lembretes automáticos e nunca mais perca seu horário.
             </p>
@@ -451,9 +493,16 @@
     <section class="section cta-block">
       <div class="cta-inner reveal" data-reveal>
         <div class="cta-copy">
-          <span class="section-label light">05 — Agende</span>
-          <h2 class="cta-title">Bora deixar o visual<br /><span class="text-gradient">no ponto?</span></h2>
-          <p>Escolhe o horário no app, chega no horário e sai com moral lá em cima. Vagas limitadas no fim de semana.</p>
+          <header class="section-editorial section-editorial--light">
+            <span class="section-editorial__index" aria-hidden="true">06</span>
+            <div class="section-editorial__text">
+              <p class="section-editorial__eyebrow">Agende &amp; prioridade</p>
+              <h2 class="section-editorial__title">Bora deixar o visual <em>no ponto?</em></h2>
+              <p class="section-editorial__lede">
+                Escolhe o horário no app, chega no horário e sai com moral lá em cima. Vagas limitadas no fim de semana.
+              </p>
+            </div>
+          </header>
         </div>
         <div class="cta-actions">
           <a href="#" class="btn btn-primary btn-lg" data-app-link>Agendar agora</a>
@@ -491,5 +540,6 @@
   <script src="js/app-showcase.js"></script>
   <script src="js/gallery-premium.js"></script>
   <script src="js/team-premium.js"></script>
+  <script src="js/brand-story.js"></script>
 </body>
 </html>

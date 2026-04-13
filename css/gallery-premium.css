@@ -22,23 +22,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.gallery-premium__kicker {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gp-gold);
-  margin: 0 0 1rem;
-}
-
-.gallery-premium__title {
-  font-family: var(--font-display, "Archivo Black", sans-serif);
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  margin: 0;
-  max-width: 14ch;
+.gallery-premium__intro.section-editorial {
+  margin-bottom: 0;
 }
 
 /* ——— Spotlight (fullscreen-ish) ——— */
