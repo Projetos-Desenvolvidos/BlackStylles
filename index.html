@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/section-editorial.css" />
+  <link rel="stylesheet" href="css/servicos-premium.css" />
   <link rel="stylesheet" href="css/app-showcase.css" />
   <link rel="stylesheet" href="css/gallery-premium.css" />
   <link rel="stylesheet" href="css/team-premium.css" />
@@ -189,48 +190,97 @@
       </div>
     </section>
 
-    <section id="servicos" class="section servicos">
+    <section id="servicos" class="section servicos servicos-premium" aria-labelledby="servicos-heading">
       <div class="section-inner">
-        <header class="section-editorial section-editorial--light reveal" data-reveal>
+        <header class="section-editorial section-editorial--light">
           <span class="section-editorial__index" aria-hidden="true">03</span>
           <div class="section-editorial__text">
-            <p class="section-editorial__eyebrow">Serviços &amp; técnica</p>
-            <h2 class="section-editorial__title">O que a gente <em>entrega</em></h2>
-            <p class="section-editorial__lede">Corte, barba e combo com tempo respeitado e resultado que segura o dia inteiro.</p>
+            <p class="section-editorial__eyebrow">Serviços &amp; técnicas</p>
+            <h2 id="servicos-heading" class="section-editorial__title">Serviços que definem o <em>seu estilo</em></h2>
+            <p class="section-editorial__lede">Precisão, técnica e atenção aos detalhes em cada atendimento.</p>
           </div>
         </header>
-        <div class="cards-servicos">
-          <article class="card-servico reveal" data-reveal>
-            <div class="card-servico-img">
-              <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="Corte na régua" width="800" height="600" loading="lazy" />
-              <span class="card-servico-badge">Mais pedido</span>
+
+        <div class="servicos-premium__grid" aria-label="Lista de serviços">
+          <article class="servico-card servico-card--featured" data-servico-card>
+            <div class="servico-card__glow" aria-hidden="true"></div>
+            <span class="servico-card__badge">Mais escolhido</span>
+            <div class="servico-card__top">
+              <h3 class="servico-card__title">Corte + barba</h3>
+              <p class="servico-card__desc">Combo completo: visual alinhado do couro cabeludo ao contorno, pronto para foto, rolê ou reunião.</p>
             </div>
-            <div class="card-servico-body">
-              <h3>Corte na régua</h3>
-              <p>Degradê, disfarce ou social — sempre com linha definida e acabamento premium.</p>
-              <span class="card-servico-meta">A partir de 45 min</span>
+            <div class="servico-card__meta">
+              <span class="servico-card__time">~70 min</span>
+              <div class="servico-card__price"><small>a partir de</small>R$ 95</div>
             </div>
+            <a href="#" class="servico-card__btn btn btn-primary" data-app-link>Agendar</a>
           </article>
-          <article class="card-servico reveal" data-reveal>
-            <div class="card-servico-img">
-              <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" alt="Barba" width="800" height="600" loading="lazy" />
+
+          <article class="servico-card" data-servico-card>
+            <div class="servico-card__glow" aria-hidden="true"></div>
+            <div class="servico-card__top">
+              <h3 class="servico-card__title">Corte masculino</h3>
+              <p class="servico-card__desc">Fade, disfarce ou social com linha definida, simetria e acabamento que segura o dia.</p>
             </div>
-            <div class="card-servico-body">
-              <h3>Barba</h3>
-              <p>Contorno, desenho e finalização com produtos que respeitam a pele.</p>
-              <span class="card-servico-meta">Navalha &amp; máquina</span>
+            <div class="servico-card__meta">
+              <span class="servico-card__time">~45 min</span>
+              <div class="servico-card__price"><small>a partir de</small>R$ 55</div>
             </div>
+            <a href="#" class="servico-card__btn btn btn-primary" data-app-link>Agendar</a>
           </article>
-          <article class="card-servico reveal" data-reveal>
-            <div class="card-servico-img">
-              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Corte + Barba" width="800" height="600" loading="lazy" />
+
+          <article class="servico-card" data-servico-card>
+            <div class="servico-card__glow" aria-hidden="true"></div>
+            <div class="servico-card__top">
+              <h3 class="servico-card__title">Barba completa</h3>
+              <p class="servico-card__desc">Desenho, contorno e finalização com produtos que respeitam a pele e o formato do rosto.</p>
             </div>
-            <div class="card-servico-body">
-              <h3>Corte + Barba</h3>
-              <p>Combo completo: sair daqui pronto pro rolê, foto ou reunião.</p>
-              <span class="card-servico-meta">Experiência full</span>
+            <div class="servico-card__meta">
+              <span class="servico-card__time">~35 min</span>
+              <div class="servico-card__price"><small>a partir de</small>R$ 40</div>
             </div>
+            <a href="#" class="servico-card__btn btn btn-primary" data-app-link>Agendar</a>
           </article>
+
+          <article class="servico-card" data-servico-card>
+            <div class="servico-card__glow" aria-hidden="true"></div>
+            <div class="servico-card__top">
+              <h3 class="servico-card__title">Acabamento</h3>
+              <p class="servico-card__desc">Pezinho, degradê leve ou retoque rápido para manter o corte impecável entre uma visita e outra.</p>
+            </div>
+            <div class="servico-card__meta">
+              <span class="servico-card__time">~20 min</span>
+              <div class="servico-card__price"><small>a partir de</small>R$ 25</div>
+            </div>
+            <a href="#" class="servico-card__btn btn btn-primary" data-app-link>Agendar</a>
+          </article>
+
+          <article class="servico-card" data-servico-card>
+            <div class="servico-card__glow" aria-hidden="true"></div>
+            <div class="servico-card__top">
+              <h3 class="servico-card__title">Tratamento capilar</h3>
+              <p class="servico-card__desc">Hidratação e cuidado para fios e couro cabeludo com sensação de leveza e brilho saudável.</p>
+            </div>
+            <div class="servico-card__meta">
+              <span class="servico-card__time">~25 min</span>
+              <div class="servico-card__price"><small>a partir de</small>R$ 35</div>
+            </div>
+            <a href="#" class="servico-card__btn btn btn-primary" data-app-link>Agendar</a>
+          </article>
+        </div>
+
+        <div class="servicos-premium__tech" data-servico-tech aria-labelledby="servicos-tech-title">
+          <div>
+            <p class="servicos-premium__tech-kicker">Técnicas</p>
+            <h3 id="servicos-tech-title" class="servicos-premium__tech-title">Protocolo de precisão</h3>
+            <p class="servicos-premium__tech-lede">Cada serviço combina ofício clássico e estética atual — sem atalhos.</p>
+          </div>
+          <ul class="servicos-premium__tech-grid" role="list">
+            <li class="servicos-premium__tech-item" data-servico-tech-item>Degradê na régua</li>
+            <li class="servicos-premium__tech-item" data-servico-tech-item>Navalhado</li>
+            <li class="servicos-premium__tech-item" data-servico-tech-item>Acabamento na máquina</li>
+            <li class="servicos-premium__tech-item" data-servico-tech-item>Design de barba</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -541,5 +591,6 @@
   <script src="js/gallery-premium.js"></script>
   <script src="js/team-premium.js"></script>
   <script src="js/brand-story.js"></script>
+  <script src="js/servicos-premium.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 .app-showcase {
   position: relative;
   min-height: 140vh;
+  max-width: 100%;
   background:
     radial-gradient(ellipse 90% 70% at 85% 20%, rgba(0, 0, 0, 0.06), transparent 55%),
     radial-gradient(ellipse 70% 50% at 10% 80%, rgba(0, 0, 0, 0.04), transparent 50%),

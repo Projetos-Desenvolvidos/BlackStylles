@@ -51,7 +51,7 @@
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           var el = entry.target;
-          var parent = el.closest(".cards-servicos, .galeria-grid, .footer-inner");
+          var parent = el.closest(".servicos-premium__grid, .galeria-grid, .footer-inner");
           var delay = 0;
           if (parent) {
             var siblings = parent.querySelectorAll("[data-reveal]");
@@ -155,7 +155,7 @@
           var y = window.scrollY;
           var max = window.innerHeight;
           var p = Math.min(y / max, 1);
-          heroBg.style.transform = "translate3d(0, " + p * 28 + "px, 0) scale(" + (1 + p * 0.03) + ")";
+          heroBg.style.transform = "translate3d(0, " + p * 28 + "px, 0) scale(" + (1 + p * 0.02) + ")";
           ticking = false;
         });
       },
