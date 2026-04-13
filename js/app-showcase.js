@@ -152,101 +152,134 @@
     };
   });
 
-  /* Mobile: mesma ideia do desktop — pin + scrub + 3D no mockup (valores um pouco mais contidos) */
+  /* Mobile: sem pin/scrub — animação automática ao entrar na tela (evita bugs de scroll) */
   mm.add("(max-width: 768px)", function () {
-    ScrollTrigger.getAll().forEach(function (st) {
-      if (st.trigger === section) {
-        st.kill();
+    var introTl = null;
+    var played = false;
+    var io = null;
+
+    function setMobileStart() {
+      if (outer) {
+        gsap.set(outer, {
+          scale: 0.84,
+          opacity: 0.52,
+          y: 44,
+          filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.16))",
+        });
+      }
+      if (tilt) {
+        gsap.set(tilt, {
+          transformPerspective: 1200,
+          rotationY: 20,
+          rotationX: 10,
+          rotation: -6,
+          scale: 0.94,
+          transformOrigin: "50% 65%",
+        });
+      }
+      if (glow) gsap.set(glow, { opacity: 0.24 });
+      if (copy) gsap.set(copy, { opacity: 0.38, y: 28 });
+    }
+
+    function playIntroOnce() {
+      if (played) return;
+      played = true;
+      if (io) {
+        io.disconnect();
+        io = null;
+      }
+
+      introTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      if (tilt) {
+        introTl.to(
+          tilt,
+          {
+            rotationY: 0,
+            rotationX: 0,
+            rotation: 0,
+            scale: 1,
+            duration: 1.35,
+          },
+          0
+        );
+      }
+
+      if (outer) {
+        introTl.to(
+          outer,
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            filter:
+              "drop-shadow(0 26px 52px rgba(0,0,0,0.24)) drop-shadow(0 0 32px rgba(255,255,255,0.28))",
+            duration: 1.35,
+          },
+          0
+        );
+      }
+
+      if (glow) {
+        introTl.to(
+          glow,
+          {
+            opacity: 0.8,
+            duration: 1,
+            ease: "power2.out",
+          },
+          0
+        );
+      }
+
+      if (copy) {
+        introTl.to(
+          copy,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+          },
+          0.12
+        );
+      }
+    }
+
+    setMobileStart();
+
+    if (!("IntersectionObserver" in window)) {
+      playIntroOnce();
+      return function () {
+        if (introTl) introTl.kill();
+        gsap.killTweensOf([outer, tilt, glow, copy].filter(Boolean));
+      };
+    }
+
+    io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          playIntroOnce();
+        });
+      },
+      { root: null, rootMargin: "0px 0px -12% 0px", threshold: 0.22 }
+    );
+
+    io.observe(section);
+
+    requestAnimationFrame(function () {
+      if (played || !section) return;
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < vh * 0.88 && rect.bottom > 48) {
+        playIntroOnce();
       }
     });
-
-    gsap.set(outer, {
-      scale: 0.84,
-      opacity: 0.52,
-      y: 44,
-      filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.16))",
-    });
-
-    gsap.set(tilt, {
-      transformPerspective: 1200,
-      rotationY: 20,
-      rotationX: 10,
-      rotation: -6,
-      scale: 0.94,
-      transformOrigin: "50% 65%",
-    });
-
-    gsap.set(glow, { opacity: 0.24 });
-    if (copy) {
-      gsap.set(copy, { opacity: 0.38, y: 28 });
-    }
-
-    var tlM = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "+=135%",
-        pin: true,
-        scrub: 1.1,
-        anticipatePin: 1,
-      },
-    });
-
-    tlM.to(
-      tilt,
-      {
-        rotationY: 0,
-        rotationX: 0,
-        rotation: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-      },
-      0
-    );
-
-    tlM.to(
-      outer,
-      {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        filter:
-          "drop-shadow(0 26px 52px rgba(0,0,0,0.24)) drop-shadow(0 0 32px rgba(255,255,255,0.28))",
-        duration: 1,
-        ease: "power3.out",
-      },
-      0
-    );
-
-    tlM.to(
-      glow,
-      {
-        opacity: 0.8,
-        duration: 0.88,
-        ease: "power2.out",
-      },
-      0
-    );
-
-    if (copy) {
-      tlM.to(
-        copy,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.55,
-          ease: "power3.out",
-        },
-        0.06
-      );
-    }
 
     return function () {
-      tlM.kill();
-      if (tlM.scrollTrigger) {
-        tlM.scrollTrigger.kill();
-      }
+      if (io) io.disconnect();
+      if (introTl) introTl.kill();
+      gsap.killTweensOf([outer, tilt, glow, copy].filter(Boolean));
     };
   });
 })();
