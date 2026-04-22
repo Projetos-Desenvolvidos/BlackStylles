@@ -76,63 +76,52 @@
 .app-showcase__stores {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.85rem;
 }
 
 .app-showcase__btn {
+  --badge-h: 56px;
+  --badge-w: 188px;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.95rem 1.35rem;
-  min-height: 52px;
-  background: linear-gradient(145deg, #1c1c1c 0%, #0a0a0a 100%);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  font-family: var(--font-body, "DM Sans", sans-serif);
-  font-weight: 600;
-  font-size: 0.9rem;
+  justify-content: center;
+  padding: 0;
+  width: var(--badge-w);
+  height: var(--badge-h);
+  min-height: var(--badge-h);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
   text-decoration: none;
-  box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition:
-    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.35s ease,
-    border-color 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.28s ease;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  cursor: pointer;
 }
 
-.app-showcase__btn::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.12) 50%,
-    transparent 60%
-  );
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.app-showcase__btn:hover::after {
-  transform: translateX(100%);
+.app-showcase__badge-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.28s ease;
 }
 
 .app-showcase__btn:hover {
-  transform: scale(1.03) translateY(-2px);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
-.app-showcase__btn:active {
-  transform: scale(0.98);
+.app-showcase__btn:hover .app-showcase__badge-img {
+  transform: scale(1.015);
+}
+
+.app-showcase__btn:active .app-showcase__badge-img {
+  transform: scale(0.99);
 }
 
 .app-showcase__btn-icon {
@@ -325,18 +314,17 @@
 
   .app-showcase__stores {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 
   .app-showcase__btn {
-    justify-content: center;
-    width: 100%;
-    min-height: 56px;
-    padding: 1rem 1.25rem;
+    width: min(100%, 188px);
   }
 
-  .app-showcase__btn-text {
-    align-items: flex-start;
+  .app-showcase__badge-img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
   }
 
   .app-showcase__visual {
