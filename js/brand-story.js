@@ -83,7 +83,7 @@
         if (mutedTitle) {
           tl.to(
             mutedTitle,
-            { color: "#f7f7f7", duration: 1.05, ease: "power2.inOut" },
+            { color: "rgba(10, 10, 10, 0.38)", duration: 1.05, ease: "power2.inOut" },
             0.52
           );
         }
@@ -163,7 +163,11 @@
           tlM.to(titleLines, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.08 }, 0.18);
         }
         if (mutedTitle) {
-          tlM.to(mutedTitle, { color: "#f7f7f7", duration: 0.75, ease: "power2.inOut" }, 0.3);
+          tlM.to(
+            mutedTitle,
+            { color: "rgba(10, 10, 10, 0.38)", duration: 0.75, ease: "power2.inOut" },
+            0.3
+          );
         }
         if (lede) tlM.to(lede, { autoAlpha: 1, y: 0, duration: 0.48 }, 0.26);
         if (visual) tlM.to(visual, { autoAlpha: 1, scale: 1, duration: 0.65 }, 0.36);

@@ -1,8 +1,8 @@
 /* Equipe — editorial / institucional (diferente da galeria) */
 .team-editorial {
   position: relative;
-  background: #060606;
-  color: #ececec;
+  background: var(--bg-elevated);
+  color: var(--text);
   overflow: hidden;
   max-width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -81,7 +81,7 @@
   font-family: var(--font-display, "Archivo Black", sans-serif);
   font-size: clamp(4rem, 12vw, 7rem);
   line-height: 1;
-  color: rgba(255, 255, 255, 0.04);
+  color: rgba(10, 10, 10, 0.08);
   pointer-events: none;
   z-index: 0;
 }
@@ -160,7 +160,7 @@
   margin: 0 0 1.75rem;
   font-size: 1.02rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--text-muted);
   max-width: 34ch;
 }
 
@@ -221,7 +221,7 @@
   left: -0.25rem;
   font-family: var(--font-display, "Archivo Black", sans-serif);
   font-size: clamp(3rem, 8vw, 5rem);
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(10, 10, 10, 0.08);
   pointer-events: none;
   z-index: 0;
 }
@@ -283,7 +283,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(10, 10, 10, 0.45);
   margin: 0 0 0.5rem;
 }
 
@@ -299,7 +299,7 @@
   margin: 0 0 1.35rem;
   font-size: 0.95rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.52);
+  color: var(--text-muted);
   max-width: 32ch;
 }
 

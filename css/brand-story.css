@@ -3,11 +3,8 @@
   position: relative;
   isolation: isolate;
   max-width: 100%;
-  background:
-    radial-gradient(ellipse 120% 80% at 15% 20%, rgba(201, 162, 39, 0.09) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 70% at 85% 100%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
-    linear-gradient(165deg, #050505 0%, #0b0b0b 42%, #080808 100%);
-  color: #e8e8e8;
+  background: var(--bg-elevated);
+  color: var(--text);
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -110,7 +107,7 @@
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(10, 10, 10, 0.45);
 }
 
 .brand-story__caption strong {
@@ -147,24 +144,24 @@
   margin: 0;
   font-size: clamp(0.98rem, 1.2vw, 1.06rem);
   line-height: 1.62;
-  color: rgba(232, 232, 232, 0.82);
+  color: var(--text-muted);
 }
 
 .brand-story__body strong {
-  color: #fff;
+  color: var(--text);
   font-weight: 600;
 }
 
 .brand-story__pullquote {
   margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
   padding: clamp(1.1rem, 2.5vw, 1.45rem) 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   font-family: var(--font-display, "Archivo Black", sans-serif);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #f5f5f5;
+  color: var(--text);
   max-width: 22ch;
 }
 

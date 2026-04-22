@@ -1,15 +1,11 @@
 /**
- * Equipe editorial — GSAP entrada + zoom suave nas fotos ao scroll
+ * Equipe editorial — entrada GSAP padronizada com as demais seções
  */
 (function () {
   "use strict";
 
   var section = document.querySelector(".team-editorial");
-  if (!section || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    return;
-  }
-
-  gsap.registerPlugin(ScrollTrigger);
+  if (!section) return;
 
   var prefersReduced =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -18,76 +14,43 @@
     return;
   }
 
-  var headerBits = section.querySelectorAll("[data-team-intro]");
-  var cards = section.querySelectorAll("[data-team-card]");
-  var imgSpot = section.querySelector(".team-spot__frame img");
-  var imgMinor = section.querySelector(".team-minor__frame img");
+  function runIntro() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+      return;
+    }
 
-  if (headerBits.length) {
-    gsap.from(headerBits, {
-      opacity: 0,
-      y: 40,
-      duration: 0.9,
-      stagger: 0.1,
-      ease: "power3.out",
-      immediateRender: false,
+    gsap.registerPlugin(ScrollTrigger);
+
+    var headerBits = Array.prototype.slice.call(section.querySelectorAll("[data-team-intro]"));
+    var cards = Array.prototype.slice.call(section.querySelectorAll("[data-team-card]"));
+    var narrow =
+      typeof window.matchMedia !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
+
+    var tl = gsap.timeline({
       scrollTrigger: {
-        trigger: section.querySelector(".section-editorial") || section,
+        trigger: section,
         start: "top 82%",
         once: true,
       },
+      defaults: { ease: "power3.out" },
     });
+
+    if (headerBits.length) {
+      tl.from(
+        headerBits,
+        { autoAlpha: 0, y: narrow ? 24 : 34, duration: narrow ? 0.62 : 0.75, stagger: 0.1 },
+        0
+      );
+    }
+
+    if (cards.length) {
+      tl.from(
+        cards,
+        { autoAlpha: 0, y: narrow ? 26 : 36, duration: narrow ? 0.56 : 0.68, stagger: narrow ? 0.07 : 0.1 },
+        0.18
+      );
+    }
   }
 
-  cards.forEach(function (card, index) {
-    var parts = card.querySelectorAll("[data-team-reveal]");
-    gsap.from(parts, {
-      opacity: 0,
-      y: 52,
-      duration: 1,
-      stagger: 0.11,
-      delay: index * 0.08,
-      ease: "power3.out",
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 86%",
-        once: true,
-      },
-    });
-  });
-
-  if (imgSpot) {
-    gsap.fromTo(
-      imgSpot,
-      { scale: 1 },
-      {
-        scale: 1.05,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section.querySelector(".team-spot") || section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.1,
-        },
-      }
-    );
-  }
-
-  if (imgMinor) {
-    gsap.fromTo(
-      imgMinor,
-      { scale: 1 },
-      {
-        scale: 1.05,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section.querySelector(".team-minor") || section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.1,
-        },
-      }
-    );
-  }
+  runIntro();
 })();
